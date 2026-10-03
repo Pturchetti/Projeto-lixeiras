@@ -160,7 +160,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             lixeira_plastico= tk.Button(lixeiras,text = "PLÁSTICO",font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(2),bg=cor_lixeira_plastico)
             lixeira_vidro = tk.Button(lixeiras,text = "VIDRO",font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(3),bg = cor_lixeira_vidro)
             lixeira_organica = tk.Button(lixeiras,text = "ORGÂNICO",font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(4),bg = cor_lixeira_organicos)
-            lixeira_metal = tk.Button(lixeiras,text = "METAL",font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(4),bg = cor_lixeira_metal)
+            lixeira_metal = tk.Button(lixeiras,text = "METAL",font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(5),bg = cor_lixeira_metal)
             
 
             
