@@ -1,4 +1,5 @@
 import sys
+import jogo
 import tkinter as tk
 
 
@@ -30,10 +31,15 @@ cor_lixeira_metal = ("#FFFB00")
 cor_lixeira_organicos = ("#331A1A")
 
 
-def interface(tela,dificuldade,mudar_tela):
-    janela = tk.Tk()
-    janela.geometry(f"{largura}x{altura}")
-    janela.configure(bg=cor_fundo)
+difuculade = -1
+janela = None
+
+def mudar_dificuldade(modo,mudar_tela):
+    global dificuldade 
+    dificuldade = modo
+    mudar_tela(3)
+
+def interface(tela,mudar_tela,palavra= None,pontuacao = None):
 
     #TESTANDO
   
@@ -56,9 +62,47 @@ def interface(tela,dificuldade,mudar_tela):
 
 
     
-    #elif tela == 2: #TELA DE SELEÇÃO DE DIFICULDADE
+    elif tela == 2: #TELA DE SELEÇÃO DE DIFICULDADE
+        titulo = tk.Label(janela,text = "SELECIONE A DIFICULDADE",font = fonte_titulo,bg = cor_fundo)
+        titulo.pack(pady = 80)
 
-    #elif tela == 3:#TELA DO JOGO
+
+        botoes = tk.Frame(janela,bg=cor_fundo)
+        botoes.pack()
+
+        facil = tk.Button(botoes, text = "FÁCIL", font = fonte_botao,width=15,command = lambda:mudar_dificuldade(1,mudar_tela))
+        medio = tk.Button(botoes, text = "MÉDIO", font = fonte_botao,width=15,command = lambda:mudar_dificuldade(2,mudar_tela))
+        dificil = tk.Button(botoes, text = "DIFÍCIL", font = fonte_botao,width=15,command = lambda:mudar_dificuldade(3,mudar_tela))
+
+
+        facil.pack(pady=30)
+        medio.pack(pady=30)
+        dificil.pack(pady=30)
+
+
+
+
+    elif tela == 3:#TELA DO JOGO
+
+        if dificuldade == 1:
+            residuo = tk.Label(janela,text = palavra,font=fonte_titulo,bg=cor_fundo)
+
+            residuo.pack(pady=80)
+
+            pontos = tk.Label(janela,text = f"Pontuacao:{pontuacao}",font = fonte_texto,bg =cor_fundo)
+            pontos.place(relx = 0.15,rely=0.13,anchor="center")
+
+            lixeiras = tk.Frame(janela,bg = cor_fundo)
+            lixeiras.place(relx=0.5,rely=0.65,anchor="center")
+
+            lixeira_papel = tk.Button(lixeiras,text = "PAPEL",font = fonte_texto,width=7,height=3,command = lambda:jogo.resposta(1),bg = cor_lixeira_papel)
+            lixeira_plastico= tk.Button(lixeiras,text = "PLÁSTICO",font = fonte_texto,width=7,height=3,command = lambda:jogo.resposta(2),bg=cor_lixeira_plastico)
+            lixeira_vidro = tk.Button(lixeiras,text = "VIDRO",font = fonte_texto,width=7,height=3,command = lambda:jogo.resposta(3),bg = cor_lixeira_vidro)
+
+            lixeira_papel.pack(side = "left",padx=30)
+            lixeira_plastico.pack(side = "left",padx=30)
+            lixeira_vidro.pack(side="left",padx=30)
+
 
     #elif tela == 4: #TELA DOS RESULTADOS
 
