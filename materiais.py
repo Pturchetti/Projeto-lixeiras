@@ -1,7 +1,6 @@
 #Lista de resíduos e suas respectivas categorias
 import json
 import os
-import jogo
 
 #Caminho da pasta do projeto e do arquivo de resíduos
 PASTA_PROJETO = os.path.dirname(os.path.abspath(__file__))

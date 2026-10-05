@@ -2,7 +2,6 @@
     {
         "palavra": "caderno",
         "silabas": "ca-der-no",
-        "fonetica": "/kaˈdɛʁ.nu/",
         "categoria": "papel",
         "lixeira": 1,
         "audio": "audios/caderno.mp3"
@@ -10,7 +9,6 @@
     {
         "palavra": "embalagem",
         "silabas": "em-ba-la-gem",
-        "fonetica": "/ẽ.baˈla.ʒẽj̃/",
         "categoria": "papel",
         "lixeira": 1,
         "audio": "audios/embalagem.mp3"
@@ -18,7 +16,6 @@
     {
         "palavra": "livros",
         "silabas": "li-vros",
-        "fonetica": "/ˈli.vɾus/",
         "categoria": "papel",
         "lixeira": 1,
         "audio": "audios/livros.mp3"
@@ -26,7 +23,6 @@
     {
         "palavra": "cartolina",
         "silabas": "car-to-li-na",
-        "fonetica": "/kaʁ.toˈli.nɐ/",
         "categoria": "papel",
         "lixeira": 1,
         "audio": "audios/cartolina.mp3"
@@ -34,7 +30,6 @@
     {
         "palavra": "papelão",
         "silabas": "pa-pe-lão",
-        "fonetica": "/pa.peˈlɐ̃w̃/",
         "categoria": "papel",
         "lixeira": 1,
         "audio": "audios/papelao.mp3"
@@ -42,7 +37,6 @@
     {
         "palavra": "envelope",
         "silabas": "en-ve-lo-pe",
-        "fonetica": "/ẽ.veˈlɔ.pi/",
         "categoria": "papel",
         "lixeira": 1,
         "audio": "audios/envelope.mp3"
@@ -50,7 +44,6 @@
     {
         "palavra": "desenho",
         "silabas": "de-se-nho",
-        "fonetica": "/deˈze.ɲu/",
         "categoria": "papel",
         "lixeira": 1,
         "audio": "audios/desenho.mp3"
@@ -58,7 +51,6 @@
     {
         "palavra": "caixa",
         "silabas": "cai-xa",
-        "fonetica": "/ˈkaj.ʃɐ/",
         "categoria": "papel",
         "lixeira": 1,
         "audio": "audios/caixa.mp3"
@@ -67,7 +59,6 @@
     {
         "palavra": "tampinhas",
         "silabas": "tam-pi-nhas",
-        "fonetica": "/tɐ̃ˈpi.ɲɐs/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/tampinhas.mp3"
@@ -75,7 +66,6 @@
     {
         "palavra": "garrafa",
         "silabas": "gar-ra-fa",
-        "fonetica": "/gaˈʁa.fɐ/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/garrafa.mp3"
@@ -83,7 +73,6 @@
     {
         "palavra": "shampoo",
         "silabas": "sham-poo",
-        "fonetica": "/ʃɐ̃ˈpu/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/shampoo.mp3"
@@ -91,7 +80,6 @@
     {
         "palavra": "canudos",
         "silabas": "ca-nu-dos",
-        "fonetica": "/kaˈnu.dus/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/canudos.mp3"
@@ -99,7 +87,6 @@
     {
         "palavra": "balde",
         "silabas": "bal-de",
-        "fonetica": "/ˈbaw.dʒi/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/balde.mp3"
@@ -107,7 +94,6 @@
     {
         "palavra": "brinquedo",
         "silabas": "brin-que-do",
-        "fonetica": "/bɾĩˈke.du/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/brinquedo.mp3"
@@ -115,7 +101,6 @@
     {
         "palavra": "pote",
         "silabas": "po-te",
-        "fonetica": "/ˈpɔ.tʃi/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/pote.mp3"
@@ -123,7 +108,6 @@
     {
         "palavra": "sacola",
         "silabas": "sa-co-la",
-        "fonetica": "/saˈkɔ.lɐ/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/sacola.mp3"
@@ -131,7 +115,6 @@
     {
         "palavra": "bandeja",
         "silabas": "ban-de-ja",
-        "fonetica": "/bɐ̃ˈde.ʒɐ/",
         "categoria": "plastico",
         "lixeira": 2,
         "audio": "audios/bandeja.mp3"
@@ -140,7 +123,6 @@
     {
         "palavra": "panela",
         "silabas": "pa-ne-la",
-        "fonetica": "/paˈnɛ.lɐ/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/panela.mp3"
@@ -148,7 +130,6 @@
     {
         "palavra": "prego",
         "silabas": "pre-go",
-        "fonetica": "/ˈpɾe.gu/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/prego.mp3"
@@ -156,7 +137,6 @@
     {
         "palavra": "talher",
         "silabas": "ta-lher",
-        "fonetica": "/taˈʎɛʁ/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/talher.mp3"
@@ -164,7 +144,6 @@
     {
         "palavra": "parafuso",
         "silabas": "pa-ra-fu-so",
-        "fonetica": "/pa.ɾaˈfu.zu/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/parafuso.mp3"
@@ -172,7 +151,6 @@
     {
         "palavra": "chave",
         "silabas": "cha-ve",
-        "fonetica": "/ˈʃa.vi/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/chave.mp3"
@@ -180,7 +158,6 @@
     {
         "palavra": "cadeado",
         "silabas": "ca-de-a-do",
-        "fonetica": "/ka.deˈa.du/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/cadeado.mp3"
@@ -188,7 +165,6 @@
     {
         "palavra": "grampo",
         "silabas": "gram-po",
-        "fonetica": "/ˈgɾɐ̃.pu/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/grampo.mp3"
@@ -196,7 +172,6 @@
     {
         "palavra": "grelha",
         "silabas": "gre-lha",
-        "fonetica": "/ˈgɾe.ʎɐ/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/grelha.mp3"
@@ -204,7 +179,6 @@
     {
         "palavra": "gaiola",
         "silabas": "gai-o-la",
-        "fonetica": "/gajˈɔ.lɐ/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/gaiola.mp3"
@@ -212,7 +186,6 @@
     {
         "palavra": "clipe",
         "silabas": "cli-pe",
-        "fonetica": "/ˈkli.pi/",
         "categoria": "metal",
         "lixeira": 5,
         "audio": "audios/clipe.mp3"
@@ -221,7 +194,6 @@
     {
         "palavra": "frasco de perfume",
         "silabas": "fras-co de per-fu-me",
-        "fonetica": "/ˈfɾas.ku dʒi peʁˈfu.mi/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/frasco_de_perfume.mp3"
@@ -229,7 +201,6 @@
     {
         "palavra": "taças",
         "silabas": "ta-ças",
-        "fonetica": "/ˈta.sɐs/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/tacas.mp3"
@@ -237,7 +208,6 @@
     {
         "palavra": "ampolas",
         "silabas": "am-po-las",
-        "fonetica": "/ɐ̃ˈpɔ.lɐs/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/ampolas.mp3"
@@ -245,7 +215,6 @@
     {
         "palavra": "pratos",
         "silabas": "pra-tos",
-        "fonetica": "/ˈpɾa.tus/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/pratos.mp3"
@@ -253,7 +222,6 @@
     {
         "palavra": "xícaras",
         "silabas": "xí-ca-ras",
-        "fonetica": "/ˈʃi.ka.ɾɐs/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/xicaras.mp3"
@@ -261,7 +229,6 @@
     {
         "palavra": "copo",
         "silabas": "co-po",
-        "fonetica": "/ˈkɔ.pu/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/copo.mp3"
@@ -269,7 +236,6 @@
     {
         "palavra": "pote de compota",
         "silabas": "po-te de com-po-ta",
-        "fonetica": "/ˈpɔ.tʃi dʒi kõˈpɔ.tɐ/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/pote_de_compota.mp3"
@@ -277,7 +243,6 @@
     {
         "palavra": "pote de conservas",
         "silabas": "po-te de con-ser-vas",
-        "fonetica": "/ˈpɔ.tʃi dʒi kõˈsɛʁ.vɐs/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/pote_de_conservas.mp3"
@@ -285,7 +250,6 @@
     {
         "palavra": "jarra de vidro",
         "silabas": "jar-ra de vi-dro",
-        "fonetica": "/ˈʒa.ʁɐ dʒi ˈvi.dɾu/",
         "categoria": "vidro",
         "lixeira": 3,
         "audio": "audios/jarra_de_vidro.mp3"
@@ -294,7 +258,6 @@
     {
         "palavra": "casca",
         "silabas": "cas-ca",
-        "fonetica": "/ˈkas.kɐ/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/casca.mp3"
@@ -302,7 +265,6 @@
     {
         "palavra": "peixe",
         "silabas": "pei-xe",
-        "fonetica": "/ˈpej.ʃi/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/peixe.mp3"
@@ -310,7 +272,6 @@
     {
         "palavra": "ossos",
         "silabas": "os-sos",
-        "fonetica": "/ˈɔ.sus/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/ossos.mp3"
@@ -318,7 +279,6 @@
     {
         "palavra": "flores",
         "silabas": "flo-res",
-        "fonetica": "/ˈflo.ɾis/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/flores.mp3"
@@ -326,7 +286,6 @@
     {
         "palavra": "galhos",
         "silabas": "ga-lhos",
-        "fonetica": "/ˈga.ʎus/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/galhos.mp3"
@@ -334,7 +293,6 @@
     {
         "palavra": "grama",
         "silabas": "gra-ma",
-        "fonetica": "/ˈgɾɐ̃.mɐ/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/grama.mp3"
@@ -342,7 +300,6 @@
     {
         "palavra": "café",
         "silabas": "ca-fé",
-        "fonetica": "/kaˈfɛ/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/cafe.mp3"
@@ -350,7 +307,6 @@
     {
         "palavra": "bagaços",
         "silabas": "ba-ga-ços",
-        "fonetica": "/baˈga.sus/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/bagacos.mp3"
@@ -358,7 +314,6 @@
     {
         "palavra": "semente",
         "silabas": "se-men-te",
-        "fonetica": "/seˈmẽ.tʃi/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/semente.mp3"
@@ -366,7 +321,6 @@
     {
         "palavra": "caroços",
         "silabas": "ca-ro-ços",
-        "fonetica": "/kaˈɾɔ.sus/",
         "categoria": "organico",
         "lixeira": 4,
         "audio": "audios/carocos.mp3"

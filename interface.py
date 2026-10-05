@@ -1,7 +1,6 @@
 import sys
 import jogo
 import tkinter as tk
-import main
 
 #PROPORÇÕES
 largura = 1400
@@ -82,9 +81,8 @@ def mudar_dificuldade(modo,mudar_tela):
 
 def clicar_lixeira(numero):
     nova_palavra,nova_pontuacao = jogo.resposta(numero)
-
-    residuo.config(text =nova_palavra)
-    pontos.config(text =f"Pontuação:{nova_pontuacao}")
+    residuo.config(text =f"{nova_palavra}")
+    pontos.config(text =f"{nova_pontuacao}")
 
 def interface(tela,mudar_tela,palavra= None,pontuacao = None):
 
@@ -128,13 +126,13 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         dificil.pack(pady=30)
 
     elif tela == 3:
-        global residuo,pontos 
+        global residuo,pontos
 
         if dificuldade == 1:
             residuo = tk.Label(janela,text = palavra,font=fonte_titulo,bg=cor_fundo)
             residuo.pack(pady=80)
 
-            pontos = tk.Label(janela,text = f"Pontuacao:{pontuacao}",font = fonte_texto,bg =cor_fundo)
+            pontos = tk.Label(janela,text = f"{pontuacao}",font = fonte_texto,bg =cor_fundo)
             pontos.place(relx = 0.15,rely=0.13,anchor="center")
 
             lixeiras = tk.Frame(janela,bg = cor_fundo)
@@ -155,7 +153,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             residuo = tk.Label(janela,text = palavra,font=fonte_titulo,bg=cor_fundo)
             residuo.pack(pady=80)
 
-            pontos = tk.Label(janela,text = f"Pontuacao:{pontuacao}",font = fonte_texto,bg =cor_fundo)
+            pontos = tk.Label(janela,text = f"{pontuacao}",font = fonte_texto,bg =cor_fundo)
             pontos.place(relx = 0.15,rely=0.13,anchor="center")     
 
             lixeiras = tk.Frame(janela, bg=cor_fundo)
@@ -182,7 +180,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             residuo = tk.Label(janela,text = palavra,font=fonte_titulo,bg=cor_fundo)
             residuo.pack(pady=80)
 
-            pontos = tk.Label(janela,text = f"Pontuacao:{pontuacao}",font = fonte_texto,bg =cor_fundo)
+            pontos = tk.Label(janela,text = f"{pontuacao}",font = fonte_texto,bg =cor_fundo)
             pontos.place(relx = 0.15,rely=0.13,anchor="center")
 
             lixeiras = tk.Frame(janela,bg = cor_fundo)
@@ -230,9 +228,15 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         medio.place(relx=0.5, rely=0.50, anchor="center")
         dificil.place(relx=0.5, rely=0.65, anchor="center")
 
-    elif tela == 3:#TELA DO JOGO
+    elif tela == 3:
         fundo = tk.Label(janela, image=imagem_tela_jogo)
         fundo.place(x=0, y=0)
+
+        residuo = tk.Label(janela,text=palavra,font=fonte_titulo,bg=cor_fundo)
+        residuo.pack(pady=80)
+
+        pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_texto,bg=cor_fundo)
+        pontos.place(relx=0.23, rely=0.09, anchor="center")
 
         if dificuldade == 1:
 
@@ -269,7 +273,5 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             lixeira_metal.place(relx=0.50, rely=0.65, anchor="center")
             lixeira_vidro.place(relx=0.70, rely=0.65, anchor="center")
             lixeira_organica.place(relx=0.90, rely=0.65, anchor="center")
-
-    janela.mainloop()
 
 
