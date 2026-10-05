@@ -57,7 +57,7 @@ def palavra_atual():
 
 
 def resposta(numero):
-    global pontuacao, acertos, erros, ultimo_acertou
+    global pontuacao, acertos, erros, ultimo_acertou,jogadas
 
     if residuo_atual is None:
         return "", pontuacao

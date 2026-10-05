@@ -77,6 +77,7 @@ pontos = None
 def mudar_dificuldade(modo,mudar_tela):
     global dificuldade 
     dificuldade = modo
+    jogo.iniciar_jogo(dificuldade)
     mudar_tela(3)
 
 def clicar_lixeira(numero):
@@ -128,7 +129,12 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
     elif tela == 3:
         global residuo,pontos
 
+        
+        jogo.novo_residuo()
         if dificuldade == 1:
+            palavra = jogo.novo_residuo()
+
+
             residuo = tk.Label(janela,text = palavra,font=fonte_titulo,bg=cor_fundo)
             residuo.pack(pady=80)
 
@@ -138,18 +144,17 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             lixeiras = tk.Frame(janela,bg = cor_fundo)
             lixeiras.place(relx=0.5,rely=0.65,anchor="center")
 
-            lixeira_papel = tk.Button(lixeiras,text = "PAPEL",
-            font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(1),bg = cor_lixeira_papel)
-            lixeira_plastico= tk.Button(lixeiras,text = "PLÁSTICO",
-            font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(2),bg = cor_lixeira_plastico)
-            lixeira_vidro = tk.Button(lixeiras,text = "VIDRO",
-            font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(3),bg = cor_lixeira_vidro)
+            lixeira_papel = tk.Button(lixeiras,text = "PAPEL",font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(1),bg = cor_lixeira_papel)
+            lixeira_plastico= tk.Button(lixeiras,text = "PLÁSTICO",font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(2),bg = cor_lixeira_plastico)
+            lixeira_vidro = tk.Button(lixeiras,text = "VIDRO",font = fonte_texto,width=7,height=3,command = lambda:clicar_lixeira(3),bg = cor_lixeira_vidro)
 
             lixeira_papel.pack(side = "left",padx=30)
             lixeira_plastico.pack(side = "left",padx=30)
             lixeira_vidro.pack(side="left",padx=30)
 
         elif dificuldade == 2:
+            palavra = jogo.novo_residuo()
+           
             residuo = tk.Label(janela,text = palavra,font=fonte_titulo,bg=cor_fundo)
             residuo.pack(pady=80)
 
@@ -177,6 +182,8 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             lixeira_organica.pack(side ="left",padx=30)
 
         elif dificuldade == 3:
+            palavra = jogo.novo_residuo()
+
             residuo = tk.Label(janela,text = palavra,font=fonte_titulo,bg=cor_fundo)
             residuo.pack(pady=80)
 
