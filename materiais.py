@@ -1,9 +1,7 @@
-
-# Lista de resíduos e suas respectivas categorias.
-
 #Lista de resíduos e suas respectivas categorias
 import json
 import os
+import jogo
 
 #Caminho da pasta do projeto e do arquivo de resíduos
 PASTA_PROJETO = os.path.dirname(os.path.abspath(__file__))
@@ -38,13 +36,13 @@ def materiais_por_lixeira(numero_lixeira):
 
 #Retorna materiais conforme o nível de dificuldade
 def materiais_por_dificuldade(dificuldade):
-    #Fácil: papel, plástico e vidro
+
     if dificuldade == 1:
         lixeiras_disponiveis = [1, 2, 3]
-    #Médio: adiciona orgânico
+
     elif dificuldade == 2:
         lixeiras_disponiveis = [1, 2, 3, 4]
-    #Difícil: todas lixeiras
+
     elif dificuldade == 3:
         lixeiras_disponiveis = [1, 2, 3, 4, 5]
     else:
