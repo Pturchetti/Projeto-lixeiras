@@ -2,7 +2,6 @@
 import tkinter as tk
 import interface
 import jogo
-import materiais
 
 tela = 1
 
@@ -13,23 +12,21 @@ def mudar_tela(nova_tela, dificuldade=None):
         interface.janela.destroy()
         return
 
-    # Ao entrar na tela do jogo com uma dificuldade escolhida, começa uma nova partida
+    primeira_palavra = None
+
     if nova_tela == 3 and dificuldade is not None:
         primeira_palavra = jogo.iniciar_jogo(dificuldade)
 
-        # Se não carregou nenhum resíduo,volta ao menu
         if primeira_palavra is None:
             print("Erro: nenhum resíduo disponível para esta dificuldade.")
             nova_tela = 1
 
     tela = nova_tela
 
-    # Limpa a tela atual antes de desenhar a nova
     for widget in interface.janela.winfo_children():
         widget.destroy()
 
-    interface.interface(tela, mudar_tela)
-
+    interface.interface(tela,mudar_tela,primeira_palavra,jogo.pontuacao)
 
 # A janela precisa existir antes de carregar as imagens
 interface.janela = tk.Tk()

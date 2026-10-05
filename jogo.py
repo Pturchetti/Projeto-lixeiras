@@ -1,8 +1,5 @@
-# Lógica do jogo: sorteio de resíduos, conferência da resposta e pontuação.
 import random
 import materiais
-import main
-import interface
 
 dificuldade = 1
 pontuacao = 0
@@ -12,9 +9,8 @@ residuo_atual = None
 ultimo_acertou = None 
 _disponiveis = []     
 
-
 def iniciar_jogo(nivel):
-    global dificuldade, pontuacao, acertos, erros, ultimo_acertou, _disponiveis, residuo_atual
+    global dificuldade, pontuacao, acertos, erros, ultimo_acertou, _disponiveis, residuo_atual, jogadas, limite
 
     dificuldade = nivel
     pontuacao = 0
@@ -22,10 +18,21 @@ def iniciar_jogo(nivel):
     erros = 0
     ultimo_acertou = None
     residuo_atual = None
+    jogadas = 0
+    limite = jogadas_dificuldade(nivel)
     _disponiveis = materiais.materiais_por_dificuldade(nivel)
 
     return novo_residuo()
 
+def jogadas_dificuldade(nivel):
+    if nivel == 1: 
+        return 10
+    elif nivel == 2:
+        return 15
+    elif nivel == 3:
+        return 20
+    else:
+        return 0
 
 def novo_residuo():
     global residuo_atual
@@ -62,6 +69,9 @@ def resposta(numero):
     else:
         erros += 1
         ultimo_acertou = False
+
+    jogadas += 1
+    if jogadas>limite: return None, pontuacao
 
     return novo_residuo(), pontuacao
 
