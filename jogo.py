@@ -22,6 +22,7 @@ def iniciar_jogo(nivel):
     limite = jogadas_dificuldade(nivel)
     _disponiveis = materiais.materiais_por_dificuldade(nivel)
 
+    
     return novo_residuo()
 
 def jogadas_dificuldade(nivel):
