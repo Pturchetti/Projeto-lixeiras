@@ -16,6 +16,10 @@ def mudar_tela(nova_tela):
     for widget in interface.janela.winfo_children():
         widget.destroy()
 
+
+    interface.interface(tela, mudar_tela)
+
+
     interface.interface(tela, mudar_tela)
 
 interface.janela = tk.Tk()
