@@ -31,6 +31,53 @@ Tela inicial → jogo → resultado final.
 
 Durante o jogo, o usuário recebe um resíduo e escolhe a lixeira correspondente. O sistema informa se a resposta está correta, atualiza a pontuação e apresenta o próximo item.
 
+## Como executar o projeto
+
+### 1. Abrir o terminal
+
+Abra o terminal e entre na pasta do projeto utilizando `cd`.
+
+Exemplo:
+
+```bash
+cd "/caminho/para/Projeto-lixeiras"
+```
+
+> **Importante:** execute o projeto a partir da pasta principal do repositório, onde estão `main.py`, `interface.py`, `jogo.py` e a pasta `imagens/`.
+
+### 2. Executar o programa
+
+Depois de entrar na pasta do projeto, execute:
+
+```bash
+python3 main.py
+```
+
+No Windows, caso `python3` não funcione, tente:
+
+```bash
+python main.py
+```
+
+### 3. Caso seja necessário instalar as bibliotecas
+
+As dependências do projeto estão no arquivo `requirements.txt`.
+
+Execute:
+
+```bash
+pip install -r requirements.txt
+```
+
+Depois, execute novamente:
+
+```bash
+python3 main.py
+```
+
+### Observação sobre o VS Code
+
+O projeto pode ser executado diretamente pelo terminal. Caso o VS Code apresente problemas relacionados ao interpretador Python ou ao Tkinter, recomenda-se executar os comandos acima pelo terminal do sistema.
 
 ## Interface.py
 
