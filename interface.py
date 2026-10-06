@@ -2,17 +2,11 @@ import sys
 import jogo
 import tkinter as tk
 
-#PROPORÇÕES
-largura = 1400
-altura = 800
-botao_largura = 96
-botao_altura = 60
+
 
 #PROPORÇÕES
 largura = 1600
 altura = 900
-botao_largura = 96
-botao_altura = 60
 
 #FONTES
 fonte_titulo = ("Arial",28,"bold")
@@ -46,7 +40,14 @@ def carregar_imagens():
     global imagem_tela_jogo
     global imagem_tela_1
     global imagem_vidro
+    global imagem_como_jogar
+    global imagem_lixeiras
+    global imagem_botao_como_jogar
 
+
+    imagem_lixeiras = tk.PhotoImage(file = "imagens/lixeiras.png")
+    imagem_botao_como_jogar = tk.PhotoImage(file = "imagens/como_jogar.png")
+    imagem_como_jogar = tk.PhotoImage(file = "imagens/regras.png")
     imagem_background = tk.PhotoImage(file="imagens/background.png")
     imagem_dificil = tk.PhotoImage(file="imagens/dificil.png")
     imagem_facil = tk.PhotoImage(file="imagens/facil.png")
@@ -69,6 +70,17 @@ def carregar_imagens():
 #LIXEIRA ORGANICOS - 4
 #LIXEIRA METAL - 5
 
+
+#TELAS
+#tela 1 inicio
+#tela 2 selecao de dificuldade
+#tela 3 jogo
+#tela 4 como jogar
+#tela 5 resumo das lixeiras
+#tela 6 parabens por ter jogado
+
+
+
 dificulade = -1
 janela = None
 residuo = None
@@ -77,28 +89,31 @@ pontos = None
 def mudar_dificuldade(modo,mudar_tela):
     global dificuldade 
     dificuldade = modo
-    jogo.iniciar_jogo(dificuldade)
-    mudar_tela(3)
+    mudar_tela(3,modo)
 
 def clicar_lixeira(numero):
     nova_palavra,nova_pontuacao = jogo.resposta(numero)
+
+
+    print("RESIDUO:", residuo)
     residuo.config(text =nova_palavra)
     pontos.config(text =nova_pontuacao)
 
 def interface(tela,mudar_tela,palavra= None,pontuacao = None):
-
-    
+    global residuo,pontos
     if tela == 1: #TELA INICIAL
         fundo = tk.Label(janela, image=imagem_tela_1)
         fundo.place(x=0, y=0)
 
         botao_jogar = tk.Button(janela,image= imagem_iniciar,command = lambda:mudar_tela(2))
-        botao_historico = tk.Button(janela,image=imagem_historico,command = lambda:mudar_tela(3))
+        botao_como_jogar = tk.Button(janela,image=imagem_botao_como_jogar,command = lambda:mudar_tela(4))
+        botao_lixeiras = tk.Button(janela,image =imagem_lixeiras,command = lambda:mudar_tela(5))
         botao_sair = tk.Button(janela,image=imagem_sair,command= lambda:mudar_tela(-1))
 
         botao_jogar.place(relx=0.5, rely=0.35, anchor="center")
-        botao_historico.place(relx=0.5, rely=0.50, anchor="center")
-        botao_sair.place(relx=0.5, rely=0.65, anchor="center")
+        botao_como_jogar.place(relx=0.5, rely=0.50, anchor="center")
+        botao_lixeiras.place(relx = 0.5,rely = 0.65, anchor= "center")
+        botao_sair.place(relx=0.5, rely=0.80, anchor="center")
     
     elif tela == 2: #TELA DE SELEÇÃO DE DIFICULDADE
         fundo = tk.Label(janela, image=imagem_tela_dificuldade)
@@ -115,6 +130,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
     elif tela == 3:
         fundo = tk.Label(janela, image=imagem_tela_jogo)
         fundo.place(x=0, y=0)
+        print("PALAVRA NA INTERFACE:", palavra)
 
         residuo = tk.Label(janela,text=palavra,font=fonte_titulo,bg=cor_fundo)
         residuo.pack(pady=80)
@@ -125,8 +141,6 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         if dificuldade == 1:
             
 
-            residuo = tk.Label(janela,text = jogo.palavra_atual(),font=fonte_titulo,bg=cor_fundo)
-            residuo.pack(pady=80)
             lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1))
             lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2))
             lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3))
@@ -136,9 +150,6 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             lixeira_vidro.place(relx=0.70, rely=0.65, anchor="center")
 
         elif dificuldade == 2:
-            palavra = jogo.novo_residuo()
-            residuo = tk.Label(janela,text = jogo.palavra_atual(),font=fonte_titulo,bg=cor_fundo)
-            residuo.pack(pady=80)
             lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1))
             lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2))
             lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3))
@@ -150,9 +161,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             lixeira_organica.place(relx=0.80, rely=0.65, anchor="center")
 
         elif dificuldade == 3:
-            palavra = jogo.novo_residuo()
-            residuo = tk.Label(janela,text = jogo.palavra_atual(),font=fonte_titulo,bg=cor_fundo)
-            residuo.pack(pady=80)
+
             lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1))
             lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2))
             lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3))
@@ -166,3 +175,13 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             lixeira_organica.place(relx=0.90, rely=0.65, anchor="center")
 
 
+    elif tela == 4: #TELA DE COMO JOGAR
+        fundo = tk.Label(janela,image = imagem_como_jogar, bg = cor_fundo)
+        fundo.place(x = 0, y = 0)
+
+        botao_voltar = tk.Button(janela,image=imagem_sair,command = lambda:mudar_tela(1))
+        botao_voltar.place(relx = 0.2,rely = 0.8, anchor= "center")
+
+
+    #elif tela == 5 TELA DO RESUMO DAS LIXEIRAS
+    #elif tela == 6 TELA DO PARABENS POR TER JOGADO
