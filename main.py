@@ -28,9 +28,7 @@ def mudar_tela(nova_tela, dificuldade=None):
 
     interface.interface(tela,mudar_tela,primeira_palavra,jogo.pontuacao)
 
-# A janela precisa existir antes de carregar as imagens
 interface.janela = tk.Tk()
-interface.janela.title("Jogo educacional de lixeiras")
 interface.carregar_imagens()
 interface.janela.geometry(f"{interface.largura}x{interface.altura}")
 interface.janela.configure(bg=interface.cor_fundo)

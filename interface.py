@@ -47,7 +47,13 @@ def carregar_imagens():
     global imagem_lixeiras
     global imagem_botao_como_jogar
     global imagem_fundo_palavras
+    global imagem_tela_final
+    global imagem_jogar_novamente
+    global imagem_menu
 
+    imagem_menu = tk.PhotoImage(file= "imagens/menu.png")
+    imagem_jogar_novamente = tk.PhotoImage(file= "imagens/jogar_novamente.png")
+    imagem_tela_final = tk.PhotoImage(file = "imagens/tela_final.png")
     imagem_fundo_palavras = tk.PhotoImage(file ="imagens/fundo_palavras.png")
     imagem_lixeiras = tk.PhotoImage(file = "imagens/lixeiras.png")
     imagem_botao_como_jogar = tk.PhotoImage(file = "imagens/como_jogar.png")
@@ -188,6 +194,27 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         botao_voltar = tk.Button(janela,image=imagem_sair,command = lambda:mudar_tela(1))
         botao_voltar.place(relx = 0.2,rely = 0.8, anchor= "center")
 
+    elif tela == 5: #TELA DO RESUMO DAS LIXEIRAS
+        fundo = tk.Label(janela, bg=cor_fundo_bg)
+        fundo.place(x=0, y=0, relwidth=1, relheight=1)
+        
+        titulo = tk.Label(janela, text="RESUMO DAS LIXEIRAS", font=fonte_titulo,
+                                  bg=cor_fundo_bg, fg=cor_texto)
+        titulo.place(relx=0.5, rely=0.08, anchor="center")
+        
 
-    #elif tela == 5 TELA DO RESUMO DAS LIXEIRAS
-    #elif tela == 6 TELA DO PARABENS POR TER JOGADO
+        botao_voltar = tk.Button(janela, image=imagem_sair, command=lambda: mudar_tela(1))
+        botao_voltar.place(relx=0.5, rely=0.88, anchor="center")
+
+    elif tela == 6: #TELA DO PARABENS POR TER JOGADO
+        fundo = tk.Label(janela, image=imagem_tela_final)
+        fundo.place(x=0, y=0)
+
+
+        pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_palavras,bg=cor_fundo_bg, fg = cor_palavras)
+
+        botao_jogar_novamente = tk.Button(janela, image=imagem_jogar_novamente,command=lambda: mudar_tela(2))
+        botao_menu = tk.Button(janela, image=imagem_menu,command=lambda: mudar_tela(1))
+
+        botao_jogar_novamente.place(relx=0.52, rely=0.50, anchor="center")
+        botao_menu.place(relx=0.52, rely=0.70, anchor="center")
