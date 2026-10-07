@@ -12,10 +12,12 @@ altura = 900
 fonte_titulo = ("Arial",28,"bold")
 fonte_botao = ("Comfortaa",28,"bold")
 fonte_texto = ("Arial",28)
+fonte_palavras = ("Adigiana Toybox", 60)
 
 #CORES
 cor_fundo = ("#FFFFFF")
-cor_fundo = ("#E5EBE3")
+cor_fundo_bg = ("#e4f2de")
+
 cor_botao = ("#FAFAFA")
 cor_texto = ("#000000")
 cor_lixeira_papel = ("#1900FF")
@@ -23,6 +25,7 @@ cor_lixeira_plastico = ("#CD0505")
 cor_lixeira_vidro = ("#098100")
 cor_lixeira_metal = ("#EFEB20")
 cor_lixeira_organicos = ("#331A1A")
+cor_palavras = ("#5E3F3F")
 
 def carregar_imagens():
     global imagem_background
@@ -43,8 +46,9 @@ def carregar_imagens():
     global imagem_como_jogar
     global imagem_lixeiras
     global imagem_botao_como_jogar
+    global imagem_fundo_palavras
 
-
+    imagem_fundo_palavras = tk.PhotoImage(file ="imagens/fundo_palavras.png")
     imagem_lixeiras = tk.PhotoImage(file = "imagens/lixeiras.png")
     imagem_botao_como_jogar = tk.PhotoImage(file = "imagens/como_jogar.png")
     imagem_como_jogar = tk.PhotoImage(file = "imagens/regras.png")
@@ -132,10 +136,12 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         fundo.place(x=0, y=0)
         print("PALAVRA NA INTERFACE:", palavra)
 
-        residuo = tk.Label(janela,text=palavra,font=fonte_titulo,bg=cor_fundo)
-        residuo.pack(pady=80)
+        fundo_palavra = tk.Label(janela,image = imagem_fundo_palavras, bg = cor_fundo_bg)
+        fundo_palavra.place(relx = 0.49, rely = 0.32, anchor = "center")
+        residuo = tk.Label(janela,text=palavra,font=fonte_palavras,bg=cor_fundo_bg,fg = cor_palavras)
+        residuo.place(relx = 0.5, rely = 0.30,anchor= "center")
 
-        pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_texto,bg=cor_fundo)
+        pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_palavras,bg=cor_fundo_bg, fg = cor_palavras)
         pontos.place(relx=0.23, rely=0.09, anchor="center")
 
         if dificuldade == 1:
