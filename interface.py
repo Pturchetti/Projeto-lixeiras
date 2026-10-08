@@ -1,11 +1,7 @@
-import ctypes
 import jogo
 import audio
-import sys
 import tkinter as tk
-from tkinter import messagebox
 import historico
-from pathlib import Path
 
 
 
@@ -33,19 +29,7 @@ cor_lixeira_metal = ("#EFEB20")
 cor_lixeira_organicos = ("#331A1A")
 cor_palavras = ("#5E3F3F")
 
-def carregar_fontes():
-    if sys.platform != "win32":
-        return
 
-    caminho_fonte = Path(__file__).resolve().parent / "fontes" / "AdigianaUI.ttf"
-    gdi32 = ctypes.WinDLL("gdi32", use_last_error=True)
-    adicionar_fonte = gdi32.AddFontResourceExW
-    adicionar_fonte.argtypes = (ctypes.c_wchar_p, ctypes.c_uint, ctypes.c_void_p)
-    adicionar_fonte.restype = ctypes.c_int
-
-    if not adicionar_fonte(str(caminho_fonte), 0x10, None):
-        erro = ctypes.get_last_error()
-        raise OSError(erro, ctypes.FormatError(erro), str(caminho_fonte))
 
 def carregar_imagens():
     global imagem_background
@@ -108,9 +92,9 @@ def carregar_imagens():
 #tela 2 selecao de dificuldade
 #tela 3 jogo
 #tela 4 como jogar
-#tela 5 resumo das lixeiras
+#tela 5 histórico
 #tela 6 parabens por ter jogado
-
+#tela 7 lixeiras
 
 
 dificuldade = -1
@@ -224,82 +208,34 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         botao_voltar = tk.Button(janela,image=imagem_sair,command = lambda:mudar_tela(1))
         botao_voltar.place(relx = 0.2,rely = 0.8, anchor= "center")
 
-    elif tela == 5: #TELA DO HISTÓRICO
+    elif tela == 5:  # TELA DO HISTÓRICO
+
         fundo = tk.Label(janela, image=imagem_background, bg=cor_fundo_bg)
         fundo.place(x=0, y=0, relwidth=1, relheight=1)
-        
-        titulo = tk.Label(
-            janela,
-            text="Histórico de Partidas",
-            font=("Adigiana Toybox", 44),
-            bg=cor_verde_botao,
-            fg=cor_fundo_bg,
-        )
+
+        titulo = tk.Label(janela,text="Histórico de Partidas",font=("Adigiana Toybox", 44),bg=cor_verde_botao,fg=cor_fundo_bg)
         titulo.place(relx=0.5, rely=0.08, anchor="center")
 
-        historico_disponivel = True
-        try:
-            partidas = historico.carregar_partidas()
-        except (OSError, ValueError) as erro:
-            messagebox.showerror(
-                "Erro no histórico",
-                f"Não foi possível carregar as partidas:\n{erro}",
-                parent=janela,
-            )
-            partidas = []
-            historico_disponivel = False
+        partidas = historico.carregar_partidas()
 
-        if not historico_disponivel:
-            falha = tk.Label(
-                janela,
-                text="Não foi possível carregar o histórico.",
-                font=fonte_texto,
-                bg=cor_verde_botao,
-                fg=cor_fundo_bg,
-            )
-            falha.place(relx=0.5, rely=0.48, anchor="center")
-        elif partidas:
-            lista = tk.Listbox(
-                janela,
-                width=76,
-                height=20,
-                font=("Adigiana Toybox", 16),
-                bg=cor_verde_botao,
-                fg=cor_fundo_bg,
-                activestyle="none",
-                highlightbackground=cor_verde_botao,
-                highlightcolor=cor_verde_botao,
-            )
-            barra = tk.Scrollbar(janela, orient="vertical", command=lista.yview)
-            lista.configure(yscrollcommand=barra.set)
+        lista = tk.Listbox(janela,font=("Adigiana Toybox", 16),bg=cor_verde_botao,fg=cor_fundo_bg,activestyle="none",bd=0)
 
-            for partida in reversed(partidas):
-                nome_dificuldade = {
-                    1: "Fácil",
-                    2: "Médio",
-                    3: "Difícil",
-                }.get(partida["dificuldade"], "Desconhecida")
-                lista.insert(
-                    tk.END,
-                    f'{partida["data"]}  |  {nome_dificuldade}  |  '
-                    f'Pontos: {partida["pontuacao"]}  |  '
-                    f'Erros: {partida["erros"]}  |  '
-                    f'{partida["percentual"]:.1f}%',
-                )
+        for partida in reversed(partidas):
 
-            lista.place(relx=0.5, rely=0.48, anchor="center", relwidth=0.78, relheight=0.66)
-            barra.place(relx=0.90, rely=0.48, anchor="center", relheight=0.66)
-        else:
-            vazio = tk.Label(
-                janela,
-                text="Nenhuma partida registrada ainda.",
-                font=fonte_texto,
-                bg=cor_verde_botao,
-                fg=cor_fundo_bg,
-            )
-            vazio.place(relx=0.5, rely=0.48, anchor="center")
+            if partida["dificuldade"] == 1:
+                nome_dificuldade = "Fácil"
+            elif partida["dificuldade"] == 2:
+                nome_dificuldade = "Médio"
+            else:
+                nome_dificuldade = "Difícil"
 
-        botao_voltar = tk.Button(janela, image=imagem_sair, command=lambda: mudar_tela(1))
+            texto = (f'{partida["data"]} | {nome_dificuldade} | 'f'Pontos: {partida["pontuacao"]} | 'f'Erros: {partida["erros"]} | 'f'{partida["percentual"]:.1f}%')
+
+            lista.insert(tk.END, texto)
+
+        lista.place(relx=0.5,rely=0.48,anchor="center",relwidth=0.78,relheight=0.66)
+
+        botao_voltar = tk.Button(janela,image=imagem_sair,command=lambda: mudar_tela(1))
         botao_voltar.place(relx=0.5, rely=0.88, anchor="center")
 
     elif tela == 6: #TELA DO PARABENS POR TER JOGADO
@@ -315,3 +251,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
 
         botao_jogar_novamente.place(relx=0.52, rely=0.50, anchor="center")
         botao_menu.place(relx=0.52, rely=0.70, anchor="center")
+    #elif tela == 7:
+
+
+

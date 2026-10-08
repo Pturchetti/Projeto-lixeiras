@@ -41,7 +41,6 @@ def mudar_tela(nova_tela, dificuldade=None):
     interface.interface(tela,mudar_tela,primeira_palavra,jogo.pontuacao)
 
 interface.janela = tk.Tk()
-interface.carregar_fontes()
 interface.carregar_imagens()
 interface.janela.geometry(f"{interface.largura}x{interface.altura}")
 interface.janela.configure(bg=interface.cor_fundo)
