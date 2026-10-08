@@ -1,5 +1,6 @@
 import sys
 import jogo
+import audio
 import tkinter as tk
 
 
@@ -108,6 +109,7 @@ def clicar_lixeira(numero):
     print("RESIDUO:", residuo)
     residuo.config(text =nova_palavra)
     pontos.config(text =nova_pontuacao)
+    audio.falar_residuo(nova_palavra)
 
 def interface(tela,mudar_tela,palavra= None,pontuacao = None):
     global residuo,pontos
@@ -146,6 +148,9 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         fundo_palavra.place(relx = 0.49, rely = 0.32, anchor = "center")
         residuo = tk.Label(janela,text=palavra,font=fonte_palavras,bg=cor_fundo_bg,fg = cor_palavras)
         residuo.place(relx = 0.5, rely = 0.30,anchor= "center")
+        audio.falar_residuo(palavra)
+        botao_ouvir = tk.Button(janela, text="🔊", font=fonte_texto, command=audio.repetir)
+        botao_ouvir.place(relx=0.78, rely=0.30, anchor="center")
 
         pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_palavras,bg=cor_fundo_bg, fg = cor_palavras)
         pontos.place(relx=0.23, rely=0.09, anchor="center")
