@@ -1,281 +1,281 @@
 [
     {
-        "palavra": "caderno",
-        "silabas": "ca-der-no",
+        "palavra": "Caderno",
+        "silabas": "Ca-der-no",
         "categoria": "papel",
         "lixeira": 1
     },
     {
-        "palavra": "embalagem",
-        "silabas": "em-ba-la-gem",
+        "palavra": "Embalagem",
+        "silabas": "Em-ba-la-gem",
         "categoria": "papel",
         "lixeira": 1
     },
     {
-        "palavra": "livros",
-        "silabas": "li-vros",
+        "palavra": "Livros",
+        "silabas": "Li-vros",
         "categoria": "papel",
         "lixeira": 1
     },
     {
-        "palavra": "cartolina",
-        "silabas": "car-to-li-na",
+        "palavra": "Cartolina",
+        "silabas": "Car-to-li-na",
         "categoria": "papel",
         "lixeira": 1
     },
     {
-        "palavra": "papelão",
-        "silabas": "pa-pe-lão",
+        "palavra": "Papelão",
+        "silabas": "Pa-pe-lão",
         "categoria": "papel",
         "lixeira": 1
     },
     {
-        "palavra": "envelope",
-        "silabas": "en-ve-lo-pe",
+        "palavra": "Envelope",
+        "silabas": "En-ve-lo-pe",
         "categoria": "papel",
         "lixeira": 1
     },
     {
-        "palavra": "desenho",
-        "silabas": "de-se-nho",
+        "palavra": "Desenho",
+        "silabas": "De-se-nho",
         "categoria": "papel",
         "lixeira": 1
     },
     {
-        "palavra": "caixa",
-        "silabas": "cai-xa",
+        "palavra": "Caixa",
+        "silabas": "Cai-xa",
         "categoria": "papel",
         "lixeira": 1
     },
 
     {
-        "palavra": "tampinhas",
-        "silabas": "tam-pi-nhas",
+        "palavra": "Tampinhas",
+        "silabas": "Tam-pi-nhas",
         "categoria": "plastico",
         "lixeira": 2
     },
     {
-        "palavra": "garrafa",
-        "silabas": "gar-ra-fa",
+        "palavra": "Garrafa",
+        "silabas": "Gar-ra-fa",
         "categoria": "plastico",
         "lixeira": 2
     },
     {
-        "palavra": "shampoo",
-        "silabas": "sham-poo",
+        "palavra": "Shampoo",
+        "silabas": "Sham-poo",
         "categoria": "plastico",
         "lixeira": 2
     },
     {
-        "palavra": "canudos",
-        "silabas": "ca-nu-dos",
+        "palavra": "Canudos",
+        "silabas": "Ca-nu-dos",
         "categoria": "plastico",
         "lixeira": 2
     },
     {
-        "palavra": "balde",
-        "silabas": "bal-de",
+        "palavra": "Balde",
+        "silabas": "Bal-de",
         "categoria": "plastico",
         "lixeira": 2
     },
     {
-        "palavra": "brinquedo",
-        "silabas": "brin-que-do",
+        "palavra": "Brinquedo",
+        "silabas": "Brin-que-do",
         "categoria": "plastico",
         "lixeira": 2
     },
     {
-        "palavra": "pote",
-        "silabas": "po-te",
+        "palavra": "Pote",
+        "silabas": "Po-te",
         "categoria": "plastico",
         "lixeira": 2
     },
     {
-        "palavra": "sacola",
-        "silabas": "sa-co-la",
+        "palavra": "Sacola",
+        "silabas": "Sa-co-la",
         "categoria": "plastico",
         "lixeira": 2
     },
     {
-        "palavra": "bandeja",
-        "silabas": "ban-de-ja",
+        "palavra": "Bandeja",
+        "silabas": "Ban-de-ja",
         "categoria": "plastico",
         "lixeira": 2
     },
 
     {
-        "palavra": "panela",
-        "silabas": "pa-ne-la",
+        "palavra": "Panela",
+        "silabas": "Pa-ne-la",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "prego",
-        "silabas": "pre-go",
+        "palavra": "Prego",
+        "silabas": "Pre-go",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "talher",
-        "silabas": "ta-lher",
+        "palavra": "Talher",
+        "silabas": "Ta-lher",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "parafuso",
-        "silabas": "pa-ra-fu-so",
+        "palavra": "Parafuso",
+        "silabas": "Pa-ra-fu-so",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "chave",
-        "silabas": "cha-ve",
+        "palavra": "Chave",
+        "silabas": "Cha-ve",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "cadeado",
-        "silabas": "ca-de-a-do",
+        "palavra": "Cadeado",
+        "silabas": "Ca-de-a-do",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "grampo",
-        "silabas": "gram-po",
+        "palavra": "Grampo",
+        "silabas": "Gram-po",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "grelha",
-        "silabas": "gre-lha",
+        "palavra": "Grelha",
+        "silabas": "Gre-lha",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "gaiola",
-        "silabas": "gai-o-la",
+        "palavra": "Gaiola",
+        "silabas": "Gai-o-la",
         "categoria": "metal",
         "lixeira": 5
     },
     {
-        "palavra": "clipe",
-        "silabas": "cli-pe",
+        "palavra": "Clipe",
+        "silabas": "Cli-pe",
         "categoria": "metal",
         "lixeira": 5
     },
 
     {
-        "palavra": "frasco de perfume",
-        "silabas": "fras-co de per-fu-me",
+        "palavra": "Frasco de perfume",
+        "silabas": "Fras-co de per-fu-me",
         "categoria": "vidro",
         "lixeira": 3
     },
     {
-        "palavra": "taças",
-        "silabas": "ta-ças",
+        "palavra": "Taças",
+        "silabas": "Ta-ças",
         "categoria": "vidro",
         "lixeira": 3
     },
     {
-        "palavra": "ampolas",
-        "silabas": "am-po-las",
+        "palavra": "Ampolas",
+        "silabas": "Am-po-las",
         "categoria": "vidro",
         "lixeira": 3
     },
     {
-        "palavra": "pratos",
-        "silabas": "pra-tos",
+        "palavra": "Pratos",
+        "silabas": "Pra-tos",
         "categoria": "vidro",
         "lixeira": 3
     },
     {
-        "palavra": "xícaras",
-        "silabas": "xí-ca-ras",
+        "palavra": "Xícaras",
+        "silabas": "Xí-ca-ras",
         "categoria": "vidro",
         "lixeira": 3
     },
     {
-        "palavra": "copo",
-        "silabas": "co-po",
+        "palavra": "Copo",
+        "silabas": "Co-po",
         "categoria": "vidro",
         "lixeira": 3
     },
     {
-        "palavra": "pote de compota",
-        "silabas": "po-te de com-po-ta",
+        "palavra": "Pote de compota",
+        "silabas": "Po-te de com-po-ta",
         "categoria": "vidro",
         "lixeira": 3
     },
     {
-        "palavra": "pote de conservas",
-        "silabas": "po-te de con-ser-vas",
+        "palavra": "Pote de conservas",
+        "silabas": "Po-te de con-ser-vas",
         "categoria": "vidro",
         "lixeira": 3
     },
     {
-        "palavra": "jarra de vidro",
-        "silabas": "jar-ra de vi-dro",
+        "palavra": "Jarra de vidro",
+        "silabas": "Jar-ra de vi-dro",
         "categoria": "vidro",
         "lixeira": 3
     },
 
     {
-        "palavra": "casca",
-        "silabas": "cas-ca",
+        "palavra": "Casca",
+        "silabas": "Cas-ca",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "peixe",
-        "silabas": "pei-xe",
+        "palavra": "Peixe",
+        "silabas": "Pei-xe",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "ossos",
-        "silabas": "os-sos",
+        "palavra": "Ossos",
+        "silabas": "Os-sos",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "flores",
-        "silabas": "flo-res",
+        "palavra": "Flores",
+        "silabas": "Flo-res",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "galhos",
-        "silabas": "ga-lhos",
+        "palavra": "Galhos",
+        "silabas": "Ga-lhos",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "grama",
-        "silabas": "gra-ma",
+        "palavra": "Grama",
+        "silabas": "Gra-ma",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "café",
-        "silabas": "ca-fé",
+        "palavra": "Café",
+        "silabas": "Ca-fé",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "bagaços",
-        "silabas": "ba-ga-ços",
+        "palavra": "Bagaços",
+        "silabas": "Ba-ga-ços",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "semente",
-        "silabas": "se-men-te",
+        "palavra": "Semente",
+        "silabas": "Se-men-te",
         "categoria": "organico",
         "lixeira": 4
     },
     {
-        "palavra": "caroços",
-        "silabas": "ca-ro-ços",
+        "palavra": "Caroços",
+        "silabas": "Ca-ro-ços",
         "categoria": "organico",
         "lixeira": 4
     }

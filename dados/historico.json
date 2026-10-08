@@ -62,5 +62,37 @@
     "acertos": 3,
     "erros": 7,
     "percentual": 30.0
+  },
+  {
+    "data": "08/10/2026 16:07",
+    "dificuldade": 1,
+    "pontuacao": 8,
+    "acertos": 8,
+    "erros": 2,
+    "percentual": 80.0
+  },
+  {
+    "data": "08/10/2026 16:08",
+    "dificuldade": 2,
+    "pontuacao": 2,
+    "acertos": 2,
+    "erros": 13,
+    "percentual": 13.3
+  },
+  {
+    "data": "08/10/2026 16:12",
+    "dificuldade": 3,
+    "pontuacao": 18,
+    "acertos": 18,
+    "erros": 2,
+    "percentual": 90.0
+  },
+  {
+    "data": "08/10/2026 16:19",
+    "dificuldade": 1,
+    "pontuacao": 2,
+    "acertos": 2,
+    "erros": 8,
+    "percentual": 20.0
   }
 ]
