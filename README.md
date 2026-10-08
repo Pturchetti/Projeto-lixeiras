@@ -9,9 +9,7 @@ O projeto foi desenvolvido como atividade acadêmica, envolvendo pesquisa, desen
 
 Objetivo
 
-O principal objetivo do projeto é utilizar um jogo como ferramenta de educação ambiental, auxiliando o usuário a reconhecer diferentes tipos de resíduos e relacioná-los às suas respectivas lixeiras.
-
-Além do aspecto educativo, o projeto teve como objetivos:
+O principal objetivo do projeto é utilizar um jogo como ferramenta de educação ambiental, auxiliando o usuário a reconhecer diferentes tipos de resíduos e relacioná-los às suas respectivas lixeiras. Além do aspecto educativo, o projeto teve como objetivos:
 
 Desenvolver uma aplicação gráfica utilizando Python;
 Trabalhar com desenvolvimento colaborativo;
@@ -26,16 +24,16 @@ Ao iniciar o programa, o usuário encontra a tela inicial e pode acessar as dife
 
 O fluxo principal é:
 
-Tela inicial → Seleção de dificuldade → Jogo → Resultado final
+Tela inicial -> Seleção de dificuldade -> Jogo -> Resultado final
 
 Durante a partida, um resíduo é apresentado na tela e o jogador deve selecionar a lixeira correspondente.
 
 A quantidade de lixeiras e resíduos disponíveis varia de acordo com a dificuldade escolhida:
 
 Dificuldade	Lixeiras	Resíduos
-Fácil	3	10
-Médio	4	15
-Difícil	5	20
+Fácil	    3	        10
+Médio	    4	        15
+Difícil	    5	        20
 
 A cada resposta, o jogo verifica se a lixeira selecionada corresponde ao resíduo apresentado e atualiza a pontuação, os acertos e os erros.
 
