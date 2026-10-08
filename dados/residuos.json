@@ -3,326 +3,280 @@
         "palavra": "caderno",
         "silabas": "ca-der-no",
         "categoria": "papel",
-        "lixeira": 1,
-        "audio": "audios/caderno.mp3"
+        "lixeira": 1
     },
     {
         "palavra": "embalagem",
         "silabas": "em-ba-la-gem",
         "categoria": "papel",
-        "lixeira": 1,
-        "audio": "audios/embalagem.mp3"
+        "lixeira": 1
     },
     {
         "palavra": "livros",
         "silabas": "li-vros",
         "categoria": "papel",
-        "lixeira": 1,
-        "audio": "audios/livros.mp3"
+        "lixeira": 1
     },
     {
         "palavra": "cartolina",
         "silabas": "car-to-li-na",
         "categoria": "papel",
-        "lixeira": 1,
-        "audio": "audios/cartolina.mp3"
+        "lixeira": 1
     },
     {
         "palavra": "papelão",
         "silabas": "pa-pe-lão",
         "categoria": "papel",
-        "lixeira": 1,
-        "audio": "audios/papelao.mp3"
+        "lixeira": 1
     },
     {
         "palavra": "envelope",
         "silabas": "en-ve-lo-pe",
         "categoria": "papel",
-        "lixeira": 1,
-        "audio": "audios/envelope.mp3"
+        "lixeira": 1
     },
     {
         "palavra": "desenho",
         "silabas": "de-se-nho",
         "categoria": "papel",
-        "lixeira": 1,
-        "audio": "audios/desenho.mp3"
+        "lixeira": 1
     },
     {
         "palavra": "caixa",
         "silabas": "cai-xa",
         "categoria": "papel",
-        "lixeira": 1,
-        "audio": "audios/caixa.mp3"
+        "lixeira": 1
     },
 
     {
         "palavra": "tampinhas",
         "silabas": "tam-pi-nhas",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/tampinhas.mp3"
+        "lixeira": 2
     },
     {
         "palavra": "garrafa",
         "silabas": "gar-ra-fa",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/garrafa.mp3"
+        "lixeira": 2
     },
     {
         "palavra": "shampoo",
         "silabas": "sham-poo",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/shampoo.mp3"
+        "lixeira": 2
     },
     {
         "palavra": "canudos",
         "silabas": "ca-nu-dos",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/canudos.mp3"
+        "lixeira": 2
     },
     {
         "palavra": "balde",
         "silabas": "bal-de",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/balde.mp3"
+        "lixeira": 2
     },
     {
         "palavra": "brinquedo",
         "silabas": "brin-que-do",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/brinquedo.mp3"
+        "lixeira": 2
     },
     {
         "palavra": "pote",
         "silabas": "po-te",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/pote.mp3"
+        "lixeira": 2
     },
     {
         "palavra": "sacola",
         "silabas": "sa-co-la",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/sacola.mp3"
+        "lixeira": 2
     },
     {
         "palavra": "bandeja",
         "silabas": "ban-de-ja",
         "categoria": "plastico",
-        "lixeira": 2,
-        "audio": "audios/bandeja.mp3"
+        "lixeira": 2
     },
 
     {
         "palavra": "panela",
         "silabas": "pa-ne-la",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/panela.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "prego",
         "silabas": "pre-go",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/prego.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "talher",
         "silabas": "ta-lher",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/talher.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "parafuso",
         "silabas": "pa-ra-fu-so",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/parafuso.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "chave",
         "silabas": "cha-ve",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/chave.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "cadeado",
         "silabas": "ca-de-a-do",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/cadeado.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "grampo",
         "silabas": "gram-po",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/grampo.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "grelha",
         "silabas": "gre-lha",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/grelha.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "gaiola",
         "silabas": "gai-o-la",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/gaiola.mp3"
+        "lixeira": 5
     },
     {
         "palavra": "clipe",
         "silabas": "cli-pe",
         "categoria": "metal",
-        "lixeira": 5,
-        "audio": "audios/clipe.mp3"
+        "lixeira": 5
     },
 
     {
         "palavra": "frasco de perfume",
         "silabas": "fras-co de per-fu-me",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/frasco_de_perfume.mp3"
+        "lixeira": 3
     },
     {
         "palavra": "taças",
         "silabas": "ta-ças",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/tacas.mp3"
+        "lixeira": 3
     },
     {
         "palavra": "ampolas",
         "silabas": "am-po-las",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/ampolas.mp3"
+        "lixeira": 3
     },
     {
         "palavra": "pratos",
         "silabas": "pra-tos",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/pratos.mp3"
+        "lixeira": 3
     },
     {
         "palavra": "xícaras",
         "silabas": "xí-ca-ras",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/xicaras.mp3"
+        "lixeira": 3
     },
     {
         "palavra": "copo",
         "silabas": "co-po",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/copo.mp3"
+        "lixeira": 3
     },
     {
         "palavra": "pote de compota",
         "silabas": "po-te de com-po-ta",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/pote_de_compota.mp3"
+        "lixeira": 3
     },
     {
         "palavra": "pote de conservas",
         "silabas": "po-te de con-ser-vas",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/pote_de_conservas.mp3"
+        "lixeira": 3
     },
     {
         "palavra": "jarra de vidro",
         "silabas": "jar-ra de vi-dro",
         "categoria": "vidro",
-        "lixeira": 3,
-        "audio": "audios/jarra_de_vidro.mp3"
+        "lixeira": 3
     },
 
     {
         "palavra": "casca",
         "silabas": "cas-ca",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/casca.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "peixe",
         "silabas": "pei-xe",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/peixe.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "ossos",
         "silabas": "os-sos",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/ossos.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "flores",
         "silabas": "flo-res",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/flores.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "galhos",
         "silabas": "ga-lhos",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/galhos.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "grama",
         "silabas": "gra-ma",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/grama.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "café",
         "silabas": "ca-fé",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/cafe.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "bagaços",
         "silabas": "ba-ga-ços",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/bagacos.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "semente",
         "silabas": "se-men-te",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/semente.mp3"
+        "lixeira": 4
     },
     {
         "palavra": "caroços",
         "silabas": "ca-ro-ços",
         "categoria": "organico",
-        "lixeira": 4,
-        "audio": "audios/carocos.mp3"
+        "lixeira": 4
     }
 ]
