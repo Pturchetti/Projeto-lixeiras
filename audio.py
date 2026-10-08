@@ -1,9 +1,4 @@
-# audio.py
-# Lê em voz alta a palavra do resíduo (Windows e Linux), usando pyttsx3.
-#
-# Como funciona: cada palavra é falada por um processo novo do Python,
-# que roda este mesmo arquivo, fala e termina. Isso evita o bug do pyttsx3
-# de só falar a primeira vez.
+
 
 import os
 import subprocess
@@ -11,13 +6,10 @@ import sys
 
 import pyttsx3
 
-_processo = None        # processo que está falando agora
-_ultima_palavra = ""    # última palavra (para o botão "repetir")
+_processo = None        
+_ultima_palavra = ""    
 
 
-# ---------------------------------------------------------------
-# PARTE 1: roda dentro do processo novo (quem realmente fala)
-# ---------------------------------------------------------------
 def _escolher_voz(engine):
     """Procura uma voz em português (do Brasil, de preferência)."""
     vozes = engine.getProperty("voices")
@@ -44,9 +36,6 @@ def _falar_agora(texto):
     engine.runAndWait()
 
 
-# ---------------------------------------------------------------
-# PARTE 2: funções que o jogo usa
-# ---------------------------------------------------------------
 def parar():
     """Corta a fala que estiver acontecendo."""
     global _processo
@@ -59,16 +48,16 @@ def falar_residuo(palavra):
     """Fala a palavra do resíduo. Chamada pela interface."""
     global _processo, _ultima_palavra
 
-    if not palavra:                   # ignora None / texto vazio (fim do jogo)
+    if not palavra:                   
         return
 
     _ultima_palavra = palavra
-    parar()                           # corta a palavra anterior, se ainda falando
+    parar()                           
 
     try:
         _processo = subprocess.Popen(
             [sys.executable, os.path.abspath(__file__), palavra],
-            # no Windows, evita abrir uma janelinha preta; no Linux vale 0
+            
             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
         )
     except Exception as erro:
@@ -80,7 +69,6 @@ def repetir():
     falar_residuo(_ultima_palavra)
 
 
-# Funções vazias, só para o interface.py poder chamá-las sem erro.
 def tocar_acerto():
     pass
 
@@ -89,9 +77,6 @@ def tocar_erro():
     pass
 
 
-# ---------------------------------------------------------------
-# Quando este arquivo é rodado pelo processo novo, ele fala e acaba.
-# ---------------------------------------------------------------
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         _falar_agora(sys.argv[1])
