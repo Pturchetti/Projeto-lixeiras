@@ -27,7 +27,7 @@ O desenvolvimento é dividido em quatro duplas:
 
 ## Fluxo
 
-Tela inicial → jogo → resultado final.
+Tela inicial → seleção de dificuldade → jogo → resultado final. A partida termina após 10 jogadas no fácil, 15 no médio ou 20 no difícil.
 
 Durante o jogo, o usuário recebe um resíduo e escolhe a lixeira correspondente. O sistema informa se a resposta está correta, atualiza a pontuação e apresenta o próximo item.
 
@@ -172,4 +172,3 @@ Para finalizar a interface, ainda é necessária a integração com:
 * Controle do estado geral da aplicação;
 * Integração entre as telas e as demais partes do projeto;
 * Controle da mudança entre tela inicial, dificuldade, jogo, resultados e histórico.
-

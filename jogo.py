@@ -72,7 +72,8 @@ def resposta(numero):
         ultimo_acertou = False
 
     jogadas += 1
-    if jogadas>limite: return None, pontuacao
+    if jogadas >= limite:
+        return None, pontuacao
 
     return novo_residuo(), pontuacao
 

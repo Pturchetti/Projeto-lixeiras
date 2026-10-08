@@ -1,4 +1,3 @@
-import sys
 import jogo
 import audio
 import tkinter as tk
@@ -53,7 +52,6 @@ def carregar_imagens():
     global imagem_menu
     global imagem_botao_som
 
-
     imagem_botao_som = tk.PhotoImage(file = "imagens/botao_som.png")
     imagem_menu = tk.PhotoImage(file= "imagens/menu.png")
     imagem_jogar_novamente = tk.PhotoImage(file= "imagens/jogar_novamente.png")
@@ -95,7 +93,7 @@ def carregar_imagens():
 
 
 
-dificulade = -1
+dificuldade = -1
 janela = None
 residuo = None
 pontos = None
@@ -105,9 +103,13 @@ def mudar_dificuldade(modo,mudar_tela):
     dificuldade = modo
     mudar_tela(3,modo)
 
-def clicar_lixeira(numero):
+def clicar_lixeira(numero, mudar_tela):
     nova_palavra,nova_pontuacao = jogo.resposta(numero)
 
+    if nova_palavra is None:
+        audio.parar()
+        mudar_tela(6)
+        return
 
     print("RESIDUO:", residuo)
     residuo.config(text =nova_palavra)
@@ -147,14 +149,11 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         fundo.place(x=0, y=0)
         print("PALAVRA NA INTERFACE:", palavra)
 
-
-
+        fundo_palavra = tk.Label(janela,image = imagem_fundo_palavras, bg = cor_fundo_bg)
+        fundo_palavra.place(relx = 0.49, rely = 0.32, anchor = "center")
         residuo = tk.Label(janela,text=palavra,font=fonte_palavras,bg=cor_fundo_bg,fg = cor_palavras)
-
         residuo.place(relx = 0.5, rely = 0.30,anchor= "center")
         audio.falar_residuo(palavra)
-
-
         botao_ouvir = tk.Button(janela,image= imagem_botao_som, command=audio.repetir)
         botao_ouvir.place(relx=0.78, rely=0.30, anchor="center")
 
@@ -164,19 +163,19 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         if dificuldade == 1:
             
 
-            lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1))
-            lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2))
-            lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3))
+            lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1,mudar_tela))
+            lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2,mudar_tela))
+            lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3,mudar_tela))
 
             lixeira_papel.place(relx=0.30, rely=0.65, anchor="center")
             lixeira_plastico.place(relx=0.50, rely=0.65, anchor="center")
             lixeira_vidro.place(relx=0.70, rely=0.65, anchor="center")
 
         elif dificuldade == 2:
-            lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1))
-            lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2))
-            lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3))
-            lixeira_organica = tk.Button(janela,image=imagem_organico,command = lambda:clicar_lixeira(4))
+            lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1,mudar_tela))
+            lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2,mudar_tela))
+            lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3,mudar_tela))
+            lixeira_organica = tk.Button(janela,image=imagem_organico,command = lambda:clicar_lixeira(4,mudar_tela))
 
             lixeira_papel.place(relx=0.20, rely=0.65, anchor="center")
             lixeira_plastico.place(relx=0.40, rely=0.65, anchor="center")
@@ -185,11 +184,11 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
 
         elif dificuldade == 3:
 
-            lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1))
-            lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2))
-            lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3))
-            lixeira_organica = tk.Button(janela,image=imagem_organico,command = lambda:clicar_lixeira(4))
-            lixeira_metal = tk.Button(janela,image=imagem_metal,command = lambda:clicar_lixeira(5))
+            lixeira_papel = tk.Button(janela,image=imagem_papel,command = lambda:clicar_lixeira(1,mudar_tela))
+            lixeira_plastico= tk.Button(janela,image=imagem_plastico,command = lambda:clicar_lixeira(2,mudar_tela))
+            lixeira_vidro = tk.Button(janela,image=imagem_vidro,command = lambda:clicar_lixeira(3,mudar_tela))
+            lixeira_organica = tk.Button(janela,image=imagem_organico,command = lambda:clicar_lixeira(4,mudar_tela))
+            lixeira_metal = tk.Button(janela,image=imagem_metal,command = lambda:clicar_lixeira(5,mudar_tela))
 
             lixeira_papel.place(relx=0.10, rely=0.65, anchor="center")
             lixeira_plastico.place(relx=0.30, rely=0.65, anchor="center")
@@ -223,6 +222,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
 
 
         pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_palavras,bg=cor_fundo_bg, fg = cor_palavras)
+        pontos.place(relx=0.64, rely=0.30, anchor="center")
 
         botao_jogar_novamente = tk.Button(janela, image=imagem_jogar_novamente,command=lambda: mudar_tela(2))
         botao_menu = tk.Button(janela, image=imagem_menu,command=lambda: mudar_tela(1))
