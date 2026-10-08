@@ -1,4 +1,4 @@
-
+#FUNÇÕES PARA O AUDIO
 
 import os
 import subprocess

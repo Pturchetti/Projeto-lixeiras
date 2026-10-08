@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "data": "08/10/2026 13:46",
+    "dificuldade": 1,
+    "pontuacao": 10,
+    "acertos": 10,
+    "erros": 0,
+    "percentual": 100.0
+  },
+  {
+    "data": "08/10/2026 14:01",
+    "dificuldade": 1,
+    "pontuacao": 9,
+    "acertos": 9,
+    "erros": 1,
+    "percentual": 90.0
+  },
+  {
+    "data": "08/10/2026 14:03",
+    "dificuldade": 1,
+    "pontuacao": 9,
+    "acertos": 9,
+    "erros": 1,
+    "percentual": 90.0
+  },
+  {
+    "data": "08/10/2026 14:09",
+    "dificuldade": 1,
+    "pontuacao": 10,
+    "acertos": 10,
+    "erros": 0,
+    "percentual": 100.0
+  }
+]
