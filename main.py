@@ -1,12 +1,24 @@
 # Ponto de entrada do jogo.
 import tkinter as tk
+from tkinter import messagebox
 import interface
 import jogo
+import historico
 
 tela = 1
 
 def mudar_tela(nova_tela, dificuldade=None):
     global tela
+
+    if nova_tela == 6 and tela != 6:
+        try:
+            historico.registrar_partida(jogo.estatisticas())
+        except (OSError, ValueError) as erro:
+            messagebox.showerror(
+                "Erro no histórico",
+                f"Não foi possível salvar a partida:\n{erro}",
+                parent=interface.janela,
+            )
 
     if nova_tela == -1:
         interface.janela.destroy()
@@ -29,6 +41,7 @@ def mudar_tela(nova_tela, dificuldade=None):
     interface.interface(tela,mudar_tela,primeira_palavra,jogo.pontuacao)
 
 interface.janela = tk.Tk()
+interface.carregar_fontes()
 interface.carregar_imagens()
 interface.janela.geometry(f"{interface.largura}x{interface.altura}")
 interface.janela.configure(bg=interface.cor_fundo)
