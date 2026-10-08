@@ -7,11 +7,11 @@ acertos = 0
 erros = 0
 residuo_atual = None    
 ultimo_acertou = None 
-_disponiveis = []
-_jogados = []  
+disponiveis = []
+jogados = []  
 
-def iniciar_jogo(nivel):
-    global dificuldade, pontuacao, acertos, erros, ultimo_acertou, _disponiveis, residuo_atual, jogadas, limite, _jogados
+def iniciar_jogo(nivel): #função para inciar o jogo com as variáveis zeradas e padronizadas
+    global dificuldade, pontuacao, acertos, erros, ultimo_acertou, disponiveis, residuo_atual, jogadas, limite, jogados
 
     dificuldade = nivel
     pontuacao = 0
@@ -21,12 +21,12 @@ def iniciar_jogo(nivel):
     residuo_atual = None
     jogadas = 0
     limite = jogadas_dificuldade(nivel)
-    _disponiveis = materiais.materiais_por_dificuldade(nivel)
-    _jogados = []
+    disponiveis = materiais.materiais_por_dificuldade(nivel)
+    jogados = []
 
     return novo_residuo()
 
-def jogadas_dificuldade(nivel):
+def jogadas_dificuldade(nivel): #função para definir o limite de jogadas por dificuldade
     if nivel == 1: 
         return 10
     elif nivel == 2:
@@ -36,21 +36,21 @@ def jogadas_dificuldade(nivel):
     else:
         return 0
 
-def novo_residuo():
-    global residuo_atual, _disponiveis, _jogados
+def novo_residuo(): #função para sempre atualizar o próximo residuo durante o jogo
+    global residuo_atual, disponiveis, jogados
 
-    if not _disponiveis:
+    if not disponiveis:
         residuo_atual = None
         return None
 
-    opcoes = [m for m in _disponiveis if m["palavra"] not in _jogados]
+    opcoes = [m for m in disponiveis if m["palavra"] not in jogados]
 
     if not opcoes:
         residuo_atual = None
         return None
 
-    residuo_atual = random.choice(opcoes)
-    _jogados.append(residuo_atual["palavra"])
+    residuo_atual = random.choice(opcoes) #aleatorização do novo residuo a ser printado
+    jogados.append(residuo_atual["palavra"])
 
     return residuo_atual["palavra"]
 
@@ -62,8 +62,8 @@ def palavra_atual():
     return residuo_atual["palavra"]
 
 
-def resposta(numero):
-    global pontuacao, acertos, erros, ultimo_acertou,jogadas
+def resposta(numero): #função que atualiza as estatísticas e a pontuação durante o jogo 
+    global pontuacao, acertos, erros, ultimo_acertou, jogadas
 
     if residuo_atual is None:
         return "", pontuacao
@@ -83,7 +83,7 @@ def resposta(numero):
     return novo_residuo(), pontuacao
 
 
-def estatisticas():
+def estatisticas(): #funcao util para contabilidade das estatísticas e inserção no histórico
     total = acertos + erros
     percentual = (acertos / total * 100) if total > 0 else 0
     return {
