@@ -1,4 +1,3 @@
-import sys
 import jogo
 import audio
 import tkinter as tk
@@ -51,7 +50,9 @@ def carregar_imagens():
     global imagem_tela_final
     global imagem_jogar_novamente
     global imagem_menu
+    global imagem_botao_som
 
+    imagem_botao_som = tk.PhotoImage(file = "imagens/botao_som.png")
     imagem_menu = tk.PhotoImage(file= "imagens/menu.png")
     imagem_jogar_novamente = tk.PhotoImage(file= "imagens/jogar_novamente.png")
     imagem_tela_final = tk.PhotoImage(file = "imagens/tela_final.png")
@@ -92,7 +93,7 @@ def carregar_imagens():
 
 
 
-dificulade = -1
+dificuldade = -1
 janela = None
 residuo = None
 pontos = None
@@ -153,7 +154,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         residuo = tk.Label(janela,text=palavra,font=fonte_palavras,bg=cor_fundo_bg,fg = cor_palavras)
         residuo.place(relx = 0.5, rely = 0.30,anchor= "center")
         audio.falar_residuo(palavra)
-        botao_ouvir = tk.Button(janela, text="🔊", font=fonte_texto, command=audio.repetir)
+        botao_ouvir = tk.Button(janela,image= imagem_botao_som, command=audio.repetir)
         botao_ouvir.place(relx=0.78, rely=0.30, anchor="center")
 
         pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_palavras,bg=cor_fundo_bg, fg = cor_palavras)
