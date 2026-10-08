@@ -153,8 +153,7 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         fundo.place(x=0, y=0)
         print("PALAVRA NA INTERFACE:", palavra)
 
-        fundo_palavra = tk.Label(janela,image = imagem_fundo_palavras, bg = cor_fundo_bg)
-        fundo_palavra.place(relx = 0.49, rely = 0.32, anchor = "center")
+
         residuo = tk.Label(janela,text=palavra,font=fonte_palavras,bg=cor_fundo_bg,fg = cor_palavras)
         residuo.place(relx = 0.5, rely = 0.30,anchor= "center")
         audio.falar_residuo(palavra)
