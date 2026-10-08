@@ -13,8 +13,14 @@ Ensinar crianças a identificar em qual categoria de lixeira diferentes resíduo
 - `materiais.py` — resíduos e categorias.
 - `interface.py` — telas, botões e elementos visuais.
 - `audio.py` — recursos de áudio.
+- `historico.py` — gravação e leitura do histórico de partidas.
 - `imagens/` — imagens das lixeiras e materiais.
 - `dados/` — histórico das tentativas.
+
+Ao concluir uma partida, o resultado é salvo em `dados/historico.json`. A opção
+**Histórico**, na tela inicial, mostra as partidas anteriores da mais recente
+para a mais antiga, incluindo data, dificuldade, pontuação, acertos, erros e
+percentual de acertos.
 
 ## Equipe
 
@@ -156,11 +162,6 @@ Para finalizar a interface, ainda é necessária a integração com:
 * Lista de resíduos disponíveis;
 * Categoria correspondente a cada resíduo;
 * Informações que serão utilizadas pela mecânica para selecionar os resíduos.
-
-**`dados/historico.json`**
-
-* Recebimento dos resultados das partidas;
-* Utilização dos dados para preencher a tela de histórico.
 
 **`audio.py`**
 
