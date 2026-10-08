@@ -57,7 +57,9 @@ def carregar_imagens():
     global imagem_jogar_novamente
     global imagem_menu
     global imagem_botao_som
+    global imagem_tela_lixeiras
 
+    imagem_tela_lixeiras = tk.PhotoImage(file = "imagens/tela_lixeiras.png")
     imagem_botao_som = tk.PhotoImage(file = "imagens/botao_som.png")
     imagem_menu = tk.PhotoImage(file= "imagens/menu.png")
     imagem_jogar_novamente = tk.PhotoImage(file= "imagens/jogar_novamente.png")
@@ -154,12 +156,14 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         botao_jogar = tk.Button(janela,image= imagem_iniciar,command = lambda:mudar_tela(2))
         botao_como_jogar = tk.Button(janela,image=imagem_botao_como_jogar,command = lambda:mudar_tela(4))
         botao_historico = tk.Button(janela,image=imagem_historico,command=lambda:mudar_tela(5))
+        botao_lixeiras = tk.Button(janela,image=imagem_lixeiras,command= lambda:mudar_tela(7))
         botao_sair = tk.Button(janela,image=imagem_sair,command= lambda:mudar_tela(-1))
 
-        botao_jogar.place(relx=0.5, rely=0.35, anchor="center")
-        botao_como_jogar.place(relx=0.5, rely=0.50, anchor="center")
-        botao_historico.place(relx=0.5, rely=0.65, anchor="center")
-        botao_sair.place(relx=0.5, rely=0.80, anchor="center")
+        botao_jogar.place(relx=0.5, rely=0.30, anchor="center")
+        botao_como_jogar.place(relx=0.5, rely=0.45, anchor="center")
+        botao_lixeiras.place(relx =0.5,rely =0.6, anchor= "center")
+        botao_historico.place(relx=0.5, rely=0.75, anchor="center")
+        botao_sair.place(relx=0.5, rely=0.90, anchor="center")
     
     elif tela == 2: #TELA DE SELEÇÃO DE DIFICULDADE
         fundo = tk.Label(janela, image=imagem_tela_dificuldade)
@@ -179,62 +183,20 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
 
         print("PALAVRA NA INTERFACE:", palavra)
 
-        residuo = tk.Label(
-            janela,
-            text=palavra,
-            font=fonte_palavras,
-            bg=cor_fundo_bg,
-            fg=cor_palavras
-        )
-
-        residuo.place(
-            relx=0.5,
-            rely=0.30,
-            anchor="center"
-        )
+        residuo = tk.Label(janela,text=palavra,font=fonte_palavras,bg=cor_fundo_bg,fg=cor_palavras)
+        residuo.place(relx=0.5,rely=0.30,anchor="center")
 
         #Exibe as sílabas da palavra
-        silabas = tk.Label(
-            janela,
-            text=buscar_silabas(palavra),
-            font=fonte_silabas,
-            bg=cor_fundo_bg,
-            fg=cor_palavras
-        )
-
-        silabas.place(
-            relx=0.5,
-            rely=0.39,
-            anchor="center"
-        )
+        silabas = tk.Label(janela,text=buscar_silabas(palavra),font=fonte_silabas,bg=cor_fundo_bg,fg=cor_palavras)
+        silabas.place(relx=0.5,rely=0.39,anchor="center")
 
         audio.falar_residuo(palavra)
 
-        botao_ouvir = tk.Button(
-            janela,
-            image=imagem_botao_som,
-            command=audio.repetir
-        )
+        botao_ouvir = tk.Button(janela,image=imagem_botao_som,command=audio.repetir)
+        botao_ouvir.place(relx=0.78,rely=0.30,anchor="center")
 
-        botao_ouvir.place(
-            relx=0.78,
-            rely=0.30,
-            anchor="center"
-        )
-
-        pontos = tk.Label(
-            janela,
-            text=f"{pontuacao}",
-            font=fonte_palavras,
-            bg=cor_fundo_bg,
-            fg=cor_palavras
-        )
-
-        pontos.place(
-            relx=0.23,
-            rely=0.09,
-            anchor="center"
-        )
+        pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_palavras,bg=cor_fundo_bg,fg=cor_palavras)
+        pontos.place(relx=0.23,rely=0.09,anchor="center")
 
         if dificuldade == 1:
             
@@ -285,30 +247,12 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
         fundo = tk.Label(janela, image=imagem_background, bg=cor_fundo_bg)
         fundo.place(x=0, y=0, relwidth=1, relheight=1)
 
-        titulo = tk.Label(
-            janela,
-            text="Histórico de Partidas",
-            font=("Adigiana Toybox", 44),
-            bg=cor_verde_botao,
-            fg=cor_fundo_bg
-        )
-
-        titulo.place(
-            relx=0.5,
-            rely=0.08,
-            anchor="center"
-        )
+        titulo = tk.Label(janela,text="Histórico de Partidas",font=("Adigiana Toybox", 44),bg=cor_fundo_bg,fg=cor_texto)
+        titulo.place(relx=0.5,rely=0.08,anchor="center")
 
         partidas = historico.carregar_partidas()
 
-        lista = tk.Listbox(
-            janela,
-            font=("Adigiana Toybox", 16),
-            bg=cor_verde_botao,
-            fg=cor_fundo_bg,
-            activestyle="none",
-            bd=0
-        )
+        lista = tk.Listbox(janela,font=("Adigiana Toybox", 16),bg=cor_verde_botao,fg=cor_fundo_bg,activestyle="none",bd=0)
 
         for partida in reversed(partidas):
 
@@ -321,76 +265,32 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
             else:
                 nome_dificuldade = "Difícil"
 
-            texto = (
-                f'{partida["data"]} | {nome_dificuldade} | '
-                f'Pontos: {partida["pontuacao"]} | '
-                f'Erros: {partida["erros"]} | '
-                f'{partida["percentual"]:.1f}%'
-            )
+            texto = (f'{partida["data"]} | {nome_dificuldade} | 'f'Pontos: {partida["pontuacao"]} | 'f'Erros: {partida["erros"]} | 'f'{partida["percentual"]:.1f}%')
 
             lista.insert(tk.END, texto)
 
-        lista.place(
-            relx=0.5,
-            rely=0.48,
-            anchor="center",
-            relwidth=0.78,
-            relheight=0.66
-        )
+        lista.place(relx=0.5,rely=0.48,anchor="center",relwidth=0.78,relheight=0.66)
 
-        botao_voltar = tk.Button(
-            janela,
-            image=imagem_sair,
-            command=lambda: mudar_tela(1)
-        )
-
-        botao_voltar.place(
-            relx=0.5,
-            rely=0.88,
-            anchor="center"
-        )
+        botao_voltar = tk.Button(janela,image=imagem_sair,command=lambda: mudar_tela(1))
+        botao_voltar.place(relx=0.5,rely=0.88,anchor="center")
 
     elif tela == 6: #TELA DO PARABENS POR TER JOGADO
         fundo = tk.Label(janela, image=imagem_tela_final)
         fundo.place(x=0, y=0)
 
 
-        pontos = tk.Label(
-            janela,
-            text=f"{pontuacao}",
-            font=fonte_palavras,
-            bg=cor_fundo_bg,
-            fg=cor_palavras
-        )
+        pontos = tk.Label(janela,text=f"{pontuacao}",font=fonte_palavras,bg=cor_fundo_bg,fg=cor_palavras)
+        pontos.place(relx=0.64,rely=0.30,anchor="center")
 
-        pontos.place(
-            relx=0.64,
-            rely=0.30,
-            anchor="center"
-        )
+        botao_jogar_novamente = tk.Button(janela,image=imagem_jogar_novamente,command=lambda: mudar_tela(2))
+        botao_menu = tk.Button(janela,image=imagem_menu,command=lambda: mudar_tela(1))
 
-        botao_jogar_novamente = tk.Button(
-            janela,
-            image=imagem_jogar_novamente,
-            command=lambda: mudar_tela(2)
-        )
+        botao_jogar_novamente.place(relx=0.52,rely=0.50,anchor="center")
+        botao_menu.place(relx=0.52,rely=0.70,anchor="center")
 
-        botao_menu = tk.Button(
-            janela,
-            image=imagem_menu,
-            command=lambda: mudar_tela(1)
-        )
+    elif tela == 7: #TELAS DAS EXPLICAÇÕES DAS LIXEIRAS
+        fundo = tk.Label(janela,image = imagem_tela_lixeiras)
+        fundo.place(x=0,y=0)
 
-        botao_jogar_novamente.place(
-            relx=0.52,
-            rely=0.50,
-            anchor="center"
-        )
-
-        botao_menu.place(
-            relx=0.52,
-            rely=0.70,
-            anchor="center"
-        )
-
-    #elif tela == 7:
+        botao_sair = tk.Button(janela,image= imagem_sair,command= lambda:mudar_tela(1))
+        botao_sair.place(relx = 0.5,rely = 0.85, anchor="center")
