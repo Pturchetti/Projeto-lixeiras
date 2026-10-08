@@ -7,10 +7,11 @@ acertos = 0
 erros = 0
 residuo_atual = None    
 ultimo_acertou = None 
-_disponiveis = []     
+_disponiveis = []
+_jogados = []  
 
 def iniciar_jogo(nivel):
-    global dificuldade, pontuacao, acertos, erros, ultimo_acertou, _disponiveis, residuo_atual, jogadas, limite
+    global dificuldade, pontuacao, acertos, erros, ultimo_acertou, _disponiveis, residuo_atual, jogadas, limite, _jogados
 
     dificuldade = nivel
     pontuacao = 0
@@ -21,8 +22,8 @@ def iniciar_jogo(nivel):
     jogadas = 0
     limite = jogadas_dificuldade(nivel)
     _disponiveis = materiais.materiais_por_dificuldade(nivel)
+    _jogados = []
 
-    
     return novo_residuo()
 
 def jogadas_dificuldade(nivel):
@@ -36,17 +37,21 @@ def jogadas_dificuldade(nivel):
         return 0
 
 def novo_residuo():
-    global residuo_atual
+    global residuo_atual, _disponiveis, _jogados
 
     if not _disponiveis:
         residuo_atual = None
         return None
 
-    opcoes = _disponiveis
-    if residuo_atual is not None and len(_disponiveis) > 1:
-        opcoes = [m for m in _disponiveis if m["palavra"] != residuo_atual["palavra"]]
+    opcoes = [m for m in _disponiveis if m["palavra"] not in _jogados]
+
+    if not opcoes:
+        residuo_atual = None
+        return None
 
     residuo_atual = random.choice(opcoes)
+    _jogados.append(residuo_atual["palavra"])
+
     return residuo_atual["palavra"]
 
 
