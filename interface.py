@@ -3,8 +3,6 @@ import audio
 import tkinter as tk
 import historico
 
-
-
 #PROPORÇÕES
 largura = 1600
 altura = 900
@@ -250,7 +248,3 @@ def interface(tela,mudar_tela,palavra= None,pontuacao = None):
 
         botao_jogar_novamente.place(relx=0.52, rely=0.50, anchor="center")
         botao_menu.place(relx=0.52, rely=0.70, anchor="center")
-    #elif tela == 7:
-
-
-
