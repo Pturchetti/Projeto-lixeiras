@@ -6,11 +6,11 @@ import sys
 
 import pyttsx3
 
-_processo = None        
-_ultima_palavra = ""    
+processo = None        
+ultima_palavra = ""    
 
 
-def _escolher_voz(engine):
+def escolher_voz(engine):
     """Procura uma voz em português (do Brasil, de preferência)."""
     vozes = engine.getProperty("voices")
     textos = [(v, f"{v.name} {v.id} {v.languages}".lower()) for v in vozes]
@@ -28,34 +28,34 @@ def _escolher_voz(engine):
     print("Aviso: nenhuma voz em português encontrada; usando a voz padrão.")
 
 
-def _falar_agora(texto):
+def falar_agora(texto):
     engine = pyttsx3.init()
     engine.setProperty("rate", 150)   # velocidade (menor = mais devagar)
-    _escolher_voz(engine)
+    escolher_voz(engine)
     engine.say(texto)
     engine.runAndWait()
 
 
 def parar():
     """Corta a fala que estiver acontecendo."""
-    global _processo
-    if _processo is not None and _processo.poll() is None:
-        _processo.terminate()
-    _processo = None
+    global processo
+    if processo is not None and processo.poll() is None:
+        processo.terminate()
+    processo = None
 
 
 def falar_residuo(palavra):
     """Fala a palavra do resíduo. Chamada pela interface."""
-    global _processo, _ultima_palavra
+    global processo, ultima_palavra
 
     if not palavra:                   
         return
 
-    _ultima_palavra = palavra
+    ultima_palavra = palavra
     parar()                           
 
     try:
-        _processo = subprocess.Popen(
+        processo = subprocess.Popen(
             [sys.executable, os.path.abspath(__file__), palavra],
             
             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
@@ -66,7 +66,7 @@ def falar_residuo(palavra):
 
 def repetir():
     """Fala de novo a última palavra."""
-    falar_residuo(_ultima_palavra)
+    falar_residuo(ultima_palavra)
 
 
 def tocar_acerto():
@@ -79,4 +79,4 @@ def tocar_erro():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        _falar_agora(sys.argv[1])
+        falar_agora(sys.argv[1])
