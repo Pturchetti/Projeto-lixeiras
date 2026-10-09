@@ -13,11 +13,10 @@ def mudar_tela(nova_tela, dificuldade=None):
         try:
             historico.registrar_partida(jogo.estatisticas())
         except (OSError, ValueError) as erro:
-            messagebox.showerror(
-                "Erro no histórico",
-                f"Não foi possível salvar a partida:\n{erro}",
-                parent=interface.janela,
-            )
+            messagebox.showerror("Erro no histórico", 
+                                "Não foi possível salvar a partida:\n{erro}",
+                                parent=interface.janela,
+                                )
 
     if nova_tela == -1: #se o usuário clicar para sair, a janela deve ser fechada
         interface.janela.destroy()

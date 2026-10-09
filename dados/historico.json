@@ -126,5 +126,21 @@
     "acertos": 15,
     "erros": 0,
     "percentual": 100.0
+  },
+  {
+    "data": "09/10/2026 00:21",
+    "dificuldade": 2,
+    "pontuacao": 5,
+    "acertos": 5,
+    "erros": 10,
+    "percentual": 33.3
+  },
+  {
+    "data": "09/10/2026 00:21",
+    "dificuldade": 1,
+    "pontuacao": 4,
+    "acertos": 4,
+    "erros": 6,
+    "percentual": 40.0
   }
 ]

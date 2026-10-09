@@ -39,24 +39,14 @@ def jogadas_dificuldade(nivel): #função para definir o limite de jogadas por d
 def novo_residuo(): #função para sempre atualizar o próximo residuo durante o jogo
     global residuo_atual, disponiveis, jogados
 
-    if not disponiveis:
-        residuo_atual = None
-        return None
-
-    opcoes = [m for m in disponiveis if m["palavra"] not in jogados]
-
-    if not opcoes:
-        residuo_atual = None
-        return None
-
+    opcoes = [m for m in disponiveis if m["palavra"] not in jogados] #verifica disponibilidade
     residuo_atual = random.choice(opcoes) #aleatorização do novo residuo a ser printado
-    jogados.append(residuo_atual["palavra"])
+    jogados.append(residuo_atual["palavra"]) #acrescenta ao jogados a palavra atual
 
     return residuo_atual["palavra"]
 
 
-def palavra_atual():
-    #Palavra do resíduo que está na tela (útil para a interface).
+def palavra_atual(): #palavra do resíduo que está na tela (útil para a interface)
     if residuo_atual is None:
         return ""
     return residuo_atual["palavra"]
@@ -71,10 +61,10 @@ def resposta(numero): #função que atualiza as estatísticas e a pontuação du
     if numero == residuo_atual["lixeira"]:
         pontuacao += 1
         acertos += 1
-        ultimo_acertou = True
+        ultimo_acertou = 1
     else:
         erros += 1
-        ultimo_acertou = False
+        ultimo_acertou = 0
 
     jogadas += 1
     if jogadas >= limite:
